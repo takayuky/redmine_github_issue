@@ -1,3 +1,7 @@
+require "redmine"
+
+require_dependency 'auto_github_issue/hooks'
+
 Redmine::Plugin.register :auto_github_issue do
   name 'Auto Github Issue Creator'
   author 'Takayuki Sakai'
