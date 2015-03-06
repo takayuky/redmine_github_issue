@@ -7,7 +7,7 @@ module AutoGithubIssue
       https = Net::HTTP.new(uri.host, uri.port)
       https.use_ssl = true
       https.verify_mode = OpenSSL::SSL::VERIFY_NONE
-      request = Net::HTTP::Post.new("/repos/sakai-takayuki/redmine-github-test/issues")
+      request = Net::HTTP::Post.new("/repos/#{GITHUB_CONFIG['repository_owner']}/#{GITHUB_CONFIG['repository']}/issues")
       request.basic_auth(GITHUB_CONFIG['username'], GITHUB_CONFIG['password'])
       request.body = {
         title: issue.subject,
