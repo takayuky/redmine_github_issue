@@ -7,16 +7,21 @@
         <th>owner</th>
         <th>username</th>
         <th>password</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
       <% for repo in @github_repos %>
         <tr>
-          <td><%= link_to repo.id, edit_github_repo_path(repo) %></td>
-          <td><%= link_to repo.name, edit_github_repo_path(repo) %></td>
+          <td><%= repo.id %></td>
+          <td><%= repo.name %></td>
           <td><%= repo.owner %></td>
           <td><%= repo.user %></td>
           <td><%= repo.pass %></td>
+          <td class="buttons">
+            <%= link_to(l(:button_edit), edit_github_repo_path(repo), :class => 'icon icon-edit') %>
+            <%= delete_link github_repo_path(repo) %>
+          </td>
         </tr>
       <% end %>
     </tbody>
