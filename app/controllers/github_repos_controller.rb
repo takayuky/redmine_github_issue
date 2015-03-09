@@ -25,4 +25,9 @@ class GithubReposController < ApplicationController
 
   def destroy
   end
+
+  private
+    def github_repo_params
+      params.require(:github_repo).permit(:project_id, :name, :owner, :user, :pass)
+    end
 end
