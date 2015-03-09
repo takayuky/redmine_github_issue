@@ -1,0 +1,30 @@
+<div class="autoscroll">
+  <table class="list">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>name</th>
+        <th>owner</th>
+        <th>username</th>
+        <th>password</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for repo in @github_repos %>
+        <tr>
+          <td><%= link_to repo.id, edit_github_repo_path(repo) %></td>
+          <td><%= link_to repo.name, edit_github_repo_path(repo) %></td>
+          <td><%= repo.owner %></td>
+          <td><%= repo.user %></td>
+          <td><%= repo.pass %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<p>
+<%= link_to("新しいGitHubレポジトリを追加",
+            new_github_repo_path(@project),
+            :class => 'icon icon-add') %>
+</p>

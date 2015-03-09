@@ -21,6 +21,9 @@ Redmine::Plugin.register :redmine_github_issue do
   url 'https://github.com/TakayukiSakai/redmine_github_issue'
   author_url 'https://github.com/TakayukiSakai'
 
+  permission :github_repos, { :github_repos => [:index_in_project] }, :public => true
+  menu :project_menu, :github_repos, { controller: 'github_repos', action: 'index_in_project' }, caption: 'GitHub'
+
   GITHUB_CONFIG = YAML.load_file("#{Rails.root.to_s}/plugins/redmine_github_issue/config/github.yml")
 end
 
