@@ -23,6 +23,9 @@ class GithubReposController < ApplicationController
   end
 
   def update
+    @github_repo = GithubRepo.find(params[:id])
+    @github_repo.update(github_repo_params)
+    redirect_to index_github_repos_path(@github_repo.project)
   end
 
   def destroy
