@@ -1,6 +1,17 @@
 require "redmine"
+require "project"
 
 require_dependency 'redmine_github_issue/hooks'
+
+module ProjectPatch
+  def self.included(base)
+    # Same as typing in the class
+    base.class_eval do
+      unloadable # Send unloadable so it will not be unloaded in development
+      has_many :github_repos
+    end
+  end
+end
 
 Redmine::Plugin.register :redmine_github_issue do
   name 'Redmine Github Issue'
@@ -10,5 +21,10 @@ Redmine::Plugin.register :redmine_github_issue do
   url 'https://github.com/TakayukiSakai/redmine_github_issue'
   author_url 'https://github.com/TakayukiSakai'
 
+  permission :github_repos, { :github_repos => [:index_in_project] }, :public => true
+  menu :project_menu, :github_repos, { controller: 'github_repos', action: 'index_in_project' }, caption: 'GitHub'
+
   GITHUB_CONFIG = YAML.load_file("#{Rails.root.to_s}/plugins/redmine_github_issue/config/github.yml")
 end
+
+Project.send(:include, ProjectPatch)

@@ -1,0 +1,37 @@
+<div class="autoscroll">
+  <table class="list">
+    <thead>
+      <tr>
+        <th>name</th>
+        <th>owner</th>
+        <th>username</th>
+        <th>password</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for repo in @github_repos %>
+        <tr>
+          <td><%= repo.name %></td>
+          <td><%= repo.owner %></td>
+          <td><%= repo.user %></td>
+          <td><%= repo.pass %></td>
+          <td class="buttons">
+            <%= link_to(l(:button_edit), edit_github_repo_path(repo), :class => 'icon icon-edit') %>
+            <%= delete_link github_repo_path(repo) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<p>
+<%= link_to("新しいGitHubレポジトリを追加",
+            new_github_repo_path(@project),
+            :class => 'icon icon-add') %>
+</p>
+
+<% content_for :header_tags do %>
+    <%= stylesheet_link_tag 'github_repo', :plugin => 'redmine_github_issue' %>
+<% end %>
