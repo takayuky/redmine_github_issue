@@ -2,7 +2,6 @@
   <table class="list">
     <thead>
       <tr>
-        <th>#</th>
         <th>name</th>
         <th>owner</th>
         <th>username</th>
@@ -13,7 +12,6 @@
     <tbody>
       <% for repo in @github_repos %>
         <tr>
-          <td><%= repo.id %></td>
           <td><%= repo.name %></td>
           <td><%= repo.owner %></td>
           <td><%= repo.user %></td>
