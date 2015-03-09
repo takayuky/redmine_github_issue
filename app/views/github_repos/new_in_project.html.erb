@@ -1,5 +1,10 @@
 <%= title "新しいGitHubレポジトリ" %>
 
 <%= labelled_form_for @github_repo, :html => {:id => 'github_repo-form', :multipart => true} do |f| %>
-form goes here
+  <div class="box tabular">
+    <div id="all_attributes">
+      <%= render :partial => 'github_repos/form', :locals => {:f => f} %>
+    </div>
+  </div>
+  <%= submit_tag l(:button_create) %>
 <% end %>
