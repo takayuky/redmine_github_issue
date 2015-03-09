@@ -26,6 +26,10 @@ class GithubReposController < ApplicationController
   end
 
   def destroy
+    @github_repo = GithubRepo.find(params[:id])
+    @project = @github_repo.project
+    @github_repo.destroy
+    redirect_to index_github_repos_path(@project)
   end
 
   private
