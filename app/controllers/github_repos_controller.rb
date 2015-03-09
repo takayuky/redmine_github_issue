@@ -7,6 +7,8 @@ class GithubReposController < ApplicationController
   end
 
   def create
+    @github_repo = GithubRepo.create(github_repo_params)
+    redirect_to index_github_repos_path(@github_repo.project)
   end
 
   def index_in_project
