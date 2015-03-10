@@ -2,3 +2,9 @@
 #github_repo-form .tabular label {
     width: 300px;
 }
+
+span.github-repo {
+    width: 22%;
+    display: inline-block;
+    font-weight: bold;
+}

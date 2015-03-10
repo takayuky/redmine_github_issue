@@ -20,6 +20,13 @@ module AutoGithubIssue
       issue.save
     end
 
+    def view_issues_show_description_bottom(context={})
+      context[:controller].send(:render_to_string, {
+        :partial => "issues/show_github_repositories",
+        :locals => context
+      })
+    end
+
     def view_issues_form_details_bottom(context={})
       context[:controller].send(:render_to_string, {
         :partial => "issues/form_github_repositories",
