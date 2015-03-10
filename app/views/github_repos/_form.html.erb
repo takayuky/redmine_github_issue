@@ -2,4 +2,4 @@
 <p><%= f.text_field :name, size: 80, maxlength: 255, required: true, label: "GitHub上のレポジトリの名前" %></p>
 <p><%= f.text_field :owner, size: 80, maxlength: 255, required: true, label: "GitHub上でのレポジトリの所有者" %></p>
 <p><%= f.text_field :user, size: 80, maxlength: 255, required: true, label: "レポジトリにアクセスするユーザの名前" %></p>
-<p><%= f.text_field :pass, size: 80, maxlength: 255, required: true, label: "レポジトリにアクセスするユーザのパスワード" %></p>
+<p><%= f.password_field :pass, size: 80, maxlength: 255, required: true, label: "レポジトリにアクセスするユーザのパスワード" %></p>
