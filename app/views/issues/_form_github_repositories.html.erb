@@ -1,0 +1,1 @@
+<p><%= form.select :github_repo_id, principals_options_for_select(@issue.project.github_repos, @issue.github_repo), :include_blank => true, :required => @issue.required_attribute?('github_repo_id'), :label => 'GitHubレポジトリ' %></p>

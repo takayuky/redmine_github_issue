@@ -20,6 +20,13 @@ module AutoGithubIssue
       issue.save
     end
 
+    def view_issues_form_details_bottom(context={})
+      context[:controller].send(:render_to_string, {
+        :partial => "issues/form_github_repositories",
+        :locals => context
+      })
+    end
+
     def view_layouts_base_html_head(context)
       stylesheet_link_tag("github_repo", :plugin => "redmine_github_issue")
     end
