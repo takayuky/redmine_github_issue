@@ -7,8 +7,12 @@ class GithubReposController < ApplicationController
   end
 
   def create
-    @github_repo = GithubRepo.create(github_repo_params)
-    redirect_to index_github_repos_path(@github_repo.project)
+    @github_repo = GithubRepo.new(github_repo_params)
+    if @github_repo.save
+      redirect_to index_github_repos_path(@github_repo.project)
+    else
+      render :action => 'new_in_project'
+    end
   end
 
   def index_in_project
