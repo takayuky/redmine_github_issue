@@ -2,6 +2,7 @@ require "redmine"
 require "project"
 
 require_dependency 'redmine_github_issue/hooks'
+require_dependency 'redmine_github_issue/issue_patch'
 
 module ProjectPatch
   def self.included(base)
