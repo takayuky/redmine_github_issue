@@ -1,3 +1,0 @@
-= Redmine Github Issue
-
-Description goes here
