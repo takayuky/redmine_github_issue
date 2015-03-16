@@ -1,3 +1,9 @@
 # English strings go here for Rails i18n
 en:
-  # my_label: "My label"
+  github_repo: "GitHub repository"
+  new_github_repo: "new GitHub repository"
+  create_new_github_repo: "new GitHub repository"
+  repository_name_on_github: "repository name on GitHub"
+  repository_owner_on_github: "repository owner on GitHub"
+  username_accessing_to_github: "user name who accesses the GitHub repository"
+  password_accessing_to_github: "password of user who accesses the GitHub repository"

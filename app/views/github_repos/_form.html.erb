@@ -1,5 +1,5 @@
 <%= f.hidden_field :project_id %>
-<p><%= f.text_field :name, size: 80, maxlength: 255, required: true, label: "GitHub上のレポジトリの名前" %></p>
-<p><%= f.text_field :owner, size: 80, maxlength: 255, required: true, label: "GitHub上でのレポジトリの所有者" %></p>
-<p><%= f.text_field :user, size: 80, maxlength: 255, required: true, label: "レポジトリにアクセスするユーザの名前" %></p>
-<p><%= f.password_field :pass, size: 80, maxlength: 255, required: true, label: "レポジトリにアクセスするユーザのパスワード" %></p>
+<p><%= f.text_field :name, size: 80, maxlength: 255, required: true, label: l(:repository_name_on_github) %></p>
+<p><%= f.text_field :owner, size: 80, maxlength: 255, required: true, label: l(:repository_owner_on_github) %></p>
+<p><%= f.text_field :user, size: 80, maxlength: 255, required: true, label: l(:username_accessing_to_github) %></p>
+<p><%= f.password_field :pass, size: 80, maxlength: 255, required: true, label: l(:password_accessing_to_github) %></p>

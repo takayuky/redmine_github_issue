@@ -1,0 +1,9 @@
+
+ja:
+  github_repo: "GitHubレポジトリ"
+  new_github_repo: "新しいGitHubレポジトリ"
+  create_new_github_repo: "新しいGitHubレポジトリを追加"
+  repository_name_on_github: "GitHub上でのレポジトリの名前"
+  repository_owner_on_github: "GitHub上でのレポジトリの所有者"
+  username_accessing_to_github: "レポジトリにアクセスするユーザの名前"
+  password_accessing_to_github: "レポジトリにアクセスするユーザのパスワード"

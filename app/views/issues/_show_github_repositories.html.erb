@@ -1,5 +1,5 @@
 <hr>
 <div id="github-repository">
-  <span class="github-repo">GitHubレポジトリ</span>
+  <span class="github-repo"><%= l(:github_repo) %></span>
   <%= @issue.github_repo.nil? ? "-" : @issue.github_repo.name %>
 </div>
